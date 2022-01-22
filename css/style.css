@@ -28,9 +28,14 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100 vw;
-  height: 175px;
+  width: 100vw;
+  height: 75px;
   background-color: black;
+}
+
+header .mobileView img {
+  width: 90vw;
+  height: 60px;
 }
 
 /* body */
@@ -39,9 +44,6 @@ header {
   background-size: cover;
   height: 85vh;
   width: 100vw;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 main .mobileView ul li {
@@ -51,7 +53,11 @@ main .mobileView ul li {
   vertical-align: middle;
   text-align: center;
   margin: 10px 0px;
-  background-color: rgba(204, 24, 49, 255);
+  background-color: rgb(218, 26, 50);
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 main .mobileView ul li a {
@@ -81,6 +87,7 @@ main .mobileView .bannerText h1 {
 main .mobileView .bannerText p {
   text-align: center;
   font-size: 2.5rem;
+  text-transform: capitalize;
 }
 
 /* footer */
@@ -111,9 +118,193 @@ footer {
 }
 
 #footerRight i:hover {
-  color: rgba(204, 24, 49, 255);
+  color: rgb(218, 26, 50);
 }
 /* ********************* */
 
 @media screen and (min-width: 400px) {
+  .desktopView {
+    display: block;
+  }
+
+  .mobileView {
+    display: none;
+  }
+
+  /* footer */
+  #footerLeft {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 5px;
+    margin-bottom: 10px;
+
+    color: white;
+  }
+
+  #footerRight {
+    width: 30vw;
+  }
+
+  /* header */
+  header {
+    display: block;
+    width: 100vw;
+    height: 100px;
+    background-color: block;
+  }
+
+  .warning {
+    height: 25px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 0.5em;
+  }
+
+  /* navbar has a few elements we don't want them overlapping, so we need to flex it, so the elements inside get flexed. */
+  .navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 75px;
+  }
+
+  /* the elements inside are not flexed, we need to style them too */
+  #navLeft img {
+    width: 200px;
+    height: 40px;
+  }
+
+  #navRight img {
+    width: 130px;
+    height: 35px;
+  }
+
+  #navLeft {
+    margin-left: 4rem;
+  }
+
+  #navRight {
+    margin-left: 4rem;
+  }
+
+  #navMiddle {
+    display: flex;
+  }
+
+  #navMiddle li {
+    background-color: rgb(218, 26, 50);
+    margin: 0px 2rem;
+    padding: 8px 15px;
+    border-radius: 10px;
+    list-style-type: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  /* this makes them bounce a bit when we hover over */
+  #navMiddle li:hover {
+    transform: scale(1.1);
+  }
+
+  #navMiddle li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* boddy  */
+  .banner-promo {
+    position: relative;
+    display: block;
+    top: 100px;
+    left: 65vw;
+    width: 375px;
+    height: 250px;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .bannerText {
+    position: relative;
+    display: inline-block;
+    top: 200px;
+    left: 65vw;
+    text-align: center;
+    /* this would just make it align with its box not relative to the pic. it needs a widht to be relative to.  */
+    width: 375px;
+    /* widht of the element */
+    color: rgb(218, 26, 50);
+  }
+
+  .bannerText p {
+    font-size: 1.25em;
+    text-transform: capitalize;
+  }
+
+  /* order form */
+
+  .order {
+    position: relative;
+    width: 600px;
+    top: 250px;
+    margin: auto;
+
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: 15px;
+    padding: 1em;
+  }
+
+  .order h1 {
+    color: rgb(218, 26, 50);
+    margin-bottom: 0.5em;
+  }
+
+  .order h2 {
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .order h2,
+  p {
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .order form {
+    border: 1px solid black;
+    padding: 1em 0;
+  }
+
+  .order form input {
+    width: 60%;
+    border: 1px solid lightgray;
+    margin-left: 10px;
+    margin-right: 0px;
+    border-radius: 5px 0 0 5px;
+    /* radius just for the top and bottom left corner. startes top left. */
+  }
+
+  .order form input::placeholder {
+    font-weight: bold;
+    color: lightgrey;
+  }
+
+  .order button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    margin: none;
+    cursor: pointer;
+  }
+
+  .order form input,
+  button {
+    padding: 1em;
+    font-weight: bold;
+  }
 }

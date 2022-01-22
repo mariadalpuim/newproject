@@ -1,5 +1,119 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.desktopView {
+  display: none;
+}
+
+/* this will keep the footer always in the bottom and hidden */
+#mainSection {
+  min-height: 100vh;
+  margin-bottom: -75px;
+}
+
+/* ********************* */
+/* mobile layout */
+
+/* header */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100 vw;
+  height: 175px;
+  background-color: black;
+}
+
+/* body */
+.banner {
+  background-image: url("../images/img_0.jpg");
+  background-size: cover;
+  height: 85vh;
+  width: 100vw;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+main .mobileView ul li {
+  height: 5vh;
+  width: 100vw;
+  line-height: 5vh;
+  vertical-align: middle;
+  text-align: center;
+  margin: 10px 0px;
+  background-color: rgba(204, 24, 49, 255);
+}
+
+main .mobileView ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+}
+
+main .mobileView .bannerText {
+  height: 40vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: antiquewhite;
+  text-shadow: 0.1em 0.1em 0 hsl(200 50% 30%);
+}
+
+main .mobileView .bannerText h1 {
+  font-size: 3.5rem;
+  margin-bottom: 5vh;
+}
+
+main .mobileView .bannerText p {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+/* footer */
+/* when I display flex footer, didnt affect the icons, because they are inside a div inside footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 75px;
+  background-color: black;
+}
+
+/* this flexes the icons as a whole */
+#footerRight {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 75px;
+}
+
+/* because the icons are a font actually, we need to manipulate them as a font. the size before was for their box, here for the icon */
+/* selected a class and its child i */
+#footerRight i {
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+#footerRight i:hover {
+  color: rgba(204, 24, 49, 255);
+}
+/* ********************* */
+
+@media screen and (min-width: 400px) {
 }
